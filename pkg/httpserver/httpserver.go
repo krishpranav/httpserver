@@ -1,6 +1,8 @@
 package httpserver
 
-import "net/http"
+import (
+	"net/http"
+)
 
 type Options struct {
 	Folder            string
@@ -19,4 +21,17 @@ type Options struct {
 type HTTPServer struct {
 	options *Options
 	layers  http.Handler
+}
+
+func New(options *Options) (*HTTPServer, error) {
+	var h HTTPServer
+	EnableUpload = options.EnableUpload
+	EnableVerbose = options.Verbose
+	h.layers = h.loglayer(http.FileServer(http.Dir(options.Folder)))
+	if options.BasicAuthUsername != "" || options.BasicAuthPassword != "" {
+		h.layers = h.loglayer(h.basicauthlayer(http.FileServer(http.Dir(options.Folder))))
+	}
+	h.options = options
+
+	return &h, nil
 }
