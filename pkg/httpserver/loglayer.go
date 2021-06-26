@@ -42,3 +42,9 @@ func (t *HTTPServer) loglayer(handler http.Handler) http.Handler {
 		}
 	})
 }
+
+type loggingResponseWriter struct {
+	http.ResponseWriter
+	statusCode int
+	Data       []byte
+}
