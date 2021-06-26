@@ -3,6 +3,8 @@ A simple http server built in golang
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-go.svg)](https://forthebadge.com)
 
+<img src=""></img>
+
 # Installation
 ```
 git clone https://github.com/krishpranav/httpserver
