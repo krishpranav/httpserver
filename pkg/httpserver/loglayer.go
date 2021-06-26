@@ -52,3 +52,17 @@ type loggingResponseWriter struct {
 func newLoggingResponseWriter(w http.ResponseWriter) *loggingResponseWriter {
 	return &loggingResponseWriter{w, http.StatusOK, []byte{}}
 }
+
+func (lrw *loggingResponseWriter) Write(data []byte) (int, error) {
+	lrw.Data = append(lrw.Data, data...)
+	return lrw.ResponseWriter.Write(data)
+}
+
+func (lrw *loggingResponseWriter) Header() http.Header {
+	return lrw.ResponseWriter.Header()
+}
+
+func (lrw *loggingResponseWriter) WriteHeader(code int) {
+	lrw.statusCode = code
+	lrw.ResponseWriter.WriteHeader(code)
+}
