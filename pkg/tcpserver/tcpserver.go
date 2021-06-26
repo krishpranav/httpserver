@@ -1,5 +1,7 @@
 package tcpserver
 
+import "net"
+
 const readTimeout = 5
 
 type Options struct {
@@ -10,4 +12,9 @@ type Options struct {
 	Domain      string
 	rules       []Rule
 	Verbose     bool
+}
+
+type TCPServer struct {
+	options  *Options
+	listener net.Listener
 }
