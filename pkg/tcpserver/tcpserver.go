@@ -18,3 +18,7 @@ type TCPServer struct {
 	options  *Options
 	listener net.Listener
 }
+
+func New(options *Options) (*TCPServer, error) {
+	return &TCPServer{options: options}, nil
+}
