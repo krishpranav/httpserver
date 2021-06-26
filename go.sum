@@ -22,6 +22,8 @@ github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZN
 github.com/projectdiscovery/gologger v1.1.4 h1:qWxGUq7ukHWT849uGPkagPKF3yBPYAsTtMKunQ8O2VI=
 github.com/projectdiscovery/gologger v1.1.4/go.mod h1:Bhb6Bdx2PV1nMaFLoXNBmHIU85iROS9y1tBuv7T5pMY=
 github.com/projectdiscovery/sslcert v0.0.0-20210416140253-8f56bec1bb5e/go.mod h1:jSp8W5zIkNPxAqVdcoFlfv0K5cqogTe65fMinR0Fvuk=
+github.com/projectdiscovery/sslcert v0.0.0-20210417222919-24614180c4c9 h1:1StMQvbGkH8n+72G0JCZNsDXhY/YM2B0ejpuUVMuvk0=
+github.com/projectdiscovery/sslcert v0.0.0-20210417222919-24614180c4c9/go.mod h1:tImNkHfAHYffu/yEpmM+hKsLTFTJ4hR4u1TRt/IyR2M=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
 github.com/stretchr/testify v1.3.0/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UVUgZn+9EI=
 github.com/stretchr/testify v1.7.0/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/h/Wwjteg=
