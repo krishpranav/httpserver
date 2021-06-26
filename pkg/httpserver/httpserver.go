@@ -35,3 +35,7 @@ func New(options *Options) (*HTTPServer, error) {
 
 	return &h, nil
 }
+
+func (t *HTTPServer) ListenAndServe() error {
+	return http.ListenAndServe(t.options.ListenAddress, t.layers)
+}
