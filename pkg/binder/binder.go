@@ -1,8 +1,10 @@
 package binder
 
 import (
+	"fmt"
 	"net"
 
+	"github.com/phayes/freeport"
 	"github.com/projectdiscovery/gologger"
 )
 
@@ -15,4 +17,18 @@ func CanListenOn(address string) bool {
 		gologger.Info().Msgf("%s\n", err)
 	}
 	return true
+}
+
+func GetRandomListenAddress(currentAddress string) (string, error) {
+	addrOrig, _, err := net.SplitHostPort(currentAddress)
+	if err != nil {
+		return "", err
+	}
+
+	newPort, err := freeport.GetFreePort()
+	if err != nil {
+		return "", err
+	}
+
+	return net.JoinHostPort(addrOrig, fmt.Sprintf("%d", newPort)), nil
 }
