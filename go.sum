@@ -21,6 +21,8 @@ github.com/phayes/freeport v0.0.0-20180830031419-95f893ade6f2/go.mod h1:iIss55rK
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/projectdiscovery/gologger v1.1.4 h1:qWxGUq7ukHWT849uGPkagPKF3yBPYAsTtMKunQ8O2VI=
 github.com/projectdiscovery/gologger v1.1.4/go.mod h1:Bhb6Bdx2PV1nMaFLoXNBmHIU85iROS9y1tBuv7T5pMY=
+github.com/projectdiscovery/simplehttpserver v0.0.3 h1:hRWJGobjl5MuDrTvN/ubelXkWs59g7g9nU7/llT/1eY=
+github.com/projectdiscovery/simplehttpserver v0.0.3/go.mod h1:wD05jfjqBrdXWqT3HFagOLLUljZWQKqsu541IoBbh6Y=
 github.com/projectdiscovery/sslcert v0.0.0-20210416140253-8f56bec1bb5e/go.mod h1:jSp8W5zIkNPxAqVdcoFlfv0K5cqogTe65fMinR0Fvuk=
 github.com/projectdiscovery/sslcert v0.0.0-20210417222919-24614180c4c9 h1:1StMQvbGkH8n+72G0JCZNsDXhY/YM2B0ejpuUVMuvk0=
 github.com/projectdiscovery/sslcert v0.0.0-20210417222919-24614180c4c9/go.mod h1:tImNkHfAHYffu/yEpmM+hKsLTFTJ4hR4u1TRt/IyR2M=
