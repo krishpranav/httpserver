@@ -2,6 +2,8 @@ package httpserver
 
 import (
 	"net/http"
+
+	"github.com/projectdiscovery/sslcert"
 )
 
 type Options struct {
@@ -38,4 +40,22 @@ func New(options *Options) (*HTTPServer, error) {
 
 func (t *HTTPServer) ListenAndServe() error {
 	return http.ListenAndServe(t.options.ListenAddress, t.layers)
+}
+
+func (t *HTTPServer) ListenAndServeTLS() error {
+	if t.options.Certificate == "" || t.options.CertificateKey == "" {
+		tlsOptions := sslcert.DefaultOptions
+		tlsOptions.Host = t.options.CertificateDomain
+		tlsConfig, err := sslcert.NewTLSConfig(tlsOptions)
+		if err != nil {
+			return err
+		}
+		httpServer := &http.Server{
+			Addr:      t.options.ListenAddress,
+			TLSConfig: tlsConfig,
+		}
+		httpServer.Handler = t.layers
+		return httpServer.ListenAndServeTLS("", "")
+	}
+	return http.ListenAndServeTLS(t.options.ListenAddress, t.options.Certificate, t.options.CertificateKey, t.layers)
 }
