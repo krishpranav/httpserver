@@ -17,7 +17,7 @@ type Options struct {
 	BasicAuthUsername string
 	BasicAuthPassword string
 	BasicAuthReal     string
-	Verbose           string
+	Verbose           bool
 }
 
 type HTTPServer struct {
@@ -58,4 +58,8 @@ func (t *HTTPServer) ListenAndServeTLS() error {
 		return httpServer.ListenAndServeTLS("", "")
 	}
 	return http.ListenAndServeTLS(t.options.ListenAddress, t.options.Certificate, t.options.CertificateKey, t.layers)
+}
+
+func (t *HTTPServer) Close() error {
+	return nil
 }
