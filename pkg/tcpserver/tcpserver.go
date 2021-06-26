@@ -22,3 +22,8 @@ type TCPServer struct {
 func New(options *Options) (*TCPServer, error) {
 	return &TCPServer{options: options}, nil
 }
+
+func (t *TCPServer) AddRule(rule Rule) error {
+	t.options.rules = append(t.options.rules, rule)
+	return nil
+}
