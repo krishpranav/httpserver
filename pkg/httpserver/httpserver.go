@@ -1,5 +1,7 @@
 package httpserver
 
+import "net/http"
+
 type Options struct {
 	Folder            string
 	EnableUpload      bool
@@ -12,4 +14,9 @@ type Options struct {
 	BasicAuthPassword string
 	BasicAuthReal     string
 	Verbose           string
+}
+
+type HTTPServer struct {
+	options *Options
+	layers  http.Handler
 }
