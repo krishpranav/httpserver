@@ -48,3 +48,7 @@ type loggingResponseWriter struct {
 	statusCode int
 	Data       []byte
 }
+
+func newLoggingResponseWriter(w http.ResponseWriter) *loggingResponseWriter {
+	return &loggingResponseWriter{w, http.StatusOK, []byte{}}
+}
